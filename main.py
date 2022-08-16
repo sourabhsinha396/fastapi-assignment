@@ -17,3 +17,7 @@ def read_root(city:str):
 @app.get("/")
 def read_index():
     return {"message":"append any city name to the url after / e.g. www.url.com/pune"}
+
+
+if __name__ == "__main__":
+    uvicorn.run("main:app", host="0.0.0.0", port=int(os.getenv("PORT", default=5000)), log_level="info")
